@@ -145,7 +145,7 @@ class JdbcDeleteQueryCreator extends RelationalQueryCreator<List<ParametrizedQue
 						.in(sqlContext.getTable().column(aggregatePath.getTableInfo().reverseColumnInfo().name()), parentSelect);
 
 				Select select = StatementBuilder.select( //
-						sqlContext.getTable().column(aggregatePath.getIdDefiningParentPath().getTableInfo().idColumnName()) //
+						sqlContext.getTable().column(aggregatePath.getTableInfo().idColumnName()) //
 				).from(sqlContext.getTable()) //
 						.where(inCondition) //
 						.build();
